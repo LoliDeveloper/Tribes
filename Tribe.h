@@ -10,6 +10,7 @@ public:
 	int warriers;
 	int armor;
 	int money;
+	const sf::Vector2f position;
 
 	void Draw(sf::RenderWindow& window);
 private:
