@@ -7,8 +7,9 @@ int widthWindow = 800;
 int heightWindow = 600;
 void Draw(sf::RenderWindow& window);
 void Update(sf::RenderWindow& window);
-
-float TribeRadius = 40.f;
+sf::Font font;
+float TribeRadius = 40.f; 
+int fontSize = 30;
 
 Tribe firstTribe(TribeRadius);
 Tribe secondTribe(TribeRadius);
@@ -24,6 +25,10 @@ sf::Vertex line[] =
 
 int main()
 {
+	if (!font.loadFromFile("arial.ttf"))
+	{
+		std::cout << "Error arial" << std::endl;
+	}
 	sf::RenderWindow window(sf::VideoMode(widthWindow, heightWindow), "SFML works!");
 	while (window.isOpen())
 	{
