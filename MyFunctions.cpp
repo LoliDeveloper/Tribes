@@ -13,14 +13,18 @@
 
 sf::Color get_random_color()
 {
-	int8_t color1 = (int8_t)(get_rand_double() * 255);
-	int8_t color2 = (int8_t)(get_rand_double() * 255);
-	int8_t color3 = (int8_t)(get_rand_double() * 255);
+	unsigned short int ic = std::chrono::system_clock::now().time_since_epoch().count();
+	srand(ic);
+	int8_t color1 = (int8_t)(get_rand_double() * 155 + 100);
+	int8_t color2 = (int8_t)(get_rand_double() * 155 + 100);
+	int8_t color3 = (int8_t)(get_rand_double() * 155 + 100);
 	return sf::Color(color1, color2, color3, 255u);
 }
 
 float get_rand_float()
 {
+	unsigned short int ic = std::chrono::system_clock::now().time_since_epoch().count();
+	srand(ic);
 	return (static_cast<float>(rand())) / RAND_MAX;
 }
 
@@ -34,6 +38,8 @@ double get_rand_double()
 
 double get_rand_double(int value)
 {
+	unsigned short int ic = std::chrono::system_clock::now().time_since_epoch().count();
+	srand(ic);
 	return get_rand_double() * value;
 }
 
