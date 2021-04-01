@@ -1,5 +1,6 @@
 Resources/Resource.designer.cs
 *.user
+test.cpp
 .project
 .metadata
 bin/
